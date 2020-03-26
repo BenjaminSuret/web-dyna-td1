@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Exercice 4</title>
-</head>
+<?php
+include "header.php";
+?>
 
-<a href="?nblignes=2&nbColonnes=2">2x2</a>
-<a href="?nblignes=5&nbColonnes=5">5x5</a>
-<a href="?nblignes=10&nbColonnes=8">10x8</a>
+<a href="?lignes=2&colonnes=2">Le tableau 2x2</a>
+<a href="?lignes=5&colonnes=5">Le tableau 5x5</a>
+<a href="?lignes=10&colonnes=8">Le tableau 10x8</a>
 
 <body>
-	<?php
-		echo "<table border='1'>
-    <tbody>";
-    for($i=0;$i<$_GET["nbColonnes"];$i++){
-        echo"<tr>";
-        for($i=0;$i<$_GET["nblignes"];$i++){
-            echo"<td>x-x</td>";
-        }
-        echo"</tr>";
-    }
-    for($i=0;$i<$_GET["nbColonnes"];$i++){
-        echo"<tr>";
-        for($i=0;$i<$_GET["nblignes"];$i++){
-            echo"<td>x-x</td>";
-        }
-        echo"</tr>";
-    }	?>
-</body>
-</html>
+	
+		<table border='1'>
+
+	<tbody>
+		<?php 
+			for($i=0;$i<$lignes;$i++)
+			{
+		?>
+				<tr>
+
+        <?php 
+        	for($j=0;$j<$nbColonnes;$j++){
+        ?>
+
+            
+        <?php }
+        ?>
+        </tr>
+
+      <?php 
+  }
+  ?>
+	?>
+
+Contenu de la page
+<?php
+include "footer.php";
