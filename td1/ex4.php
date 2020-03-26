@@ -14,14 +14,22 @@ include "header.php";
   			<tbody>";
     			for($a=1;$a<=$_GET["lignes"];$a++)
     			    { 
-						if (($a % 2) == 0)
-    					{
-            				$gras = "bold";
-            			} 
+						if (($a % 2) == 0){
+            				$epaisseur = "bold";
+        				}
+        				else{
+            				$epaisseur = "normal";
+        				} 
        					echo "<tr>"; 
         				for($b=1;$b<=$_GET["colonnes"];$b++)
         					{ 
-            					echo "<td> <p style='font-weight: bold;'>$a-$b</p> </td>";
+        				if (($b % 2) == 1){
+                			$couleur = "blue";
+            			}
+            			else{
+                			$couleur = "green";
+            			}
+            				echo "<td> <p style='font-weight: $epaisseur; color: $couleur'>$a-$b</p> </td>";
         					} 
         				echo "</tr>"; 
     				} 
